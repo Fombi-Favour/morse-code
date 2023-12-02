@@ -39,3 +39,12 @@ def decode_word(word)
   end
   @current_word
 end
+
+def decode_message(message)
+  words = message.split('   ')
+  decoded_words = words.map { |word| decode_word(word) }
+  decoded_message = decoded_words.join(' ')
+  print decoded_message
+end
+message_code = '.-   -... --- -..-   ..-. ..- .-.. .-..    --- ..-.    .-. ..- -... .. . ...'
+decode_message(message_code)
